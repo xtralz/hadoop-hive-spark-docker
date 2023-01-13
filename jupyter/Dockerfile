@@ -1,5 +1,6 @@
 FROM hadoop-hive-spark-base AS base
-FROM tensorflow/tensorflow:latest-gpu-jupyter
+#FROM tensorflow/tensorflow:latest-gpu-jupyter
+FROM tf-cpu
 
 RUN sed -i -e "s|http://archive.ubuntu.com|http://jp.archive.ubuntu.com|g" /etc/apt/sources.list \
  && apt-get -qq update  \
@@ -53,7 +54,7 @@ RUN sudo pip install -U pip &&\
     findspark \
     tensorflow-serving-api
 
-WORKDIR /home/$USERNAME
+WORKDIR /tf
 
 COPY run.sh /usr/local/sbin/run.sh
 RUN sudo chmod a+x /usr/local/sbin/run.sh
