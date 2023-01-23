@@ -56,6 +56,6 @@ RUN sudo pip install -U pip &&\
 
 WORKDIR /tf
 
-COPY run.sh /usr/local/sbin/run.sh
-RUN sudo chmod a+x /usr/local/sbin/run.sh
-CMD ["run.sh"]
+#COPY run.sh /usr/local/sbin/run.sh
+#RUN sudo chmod a+x /usr/local/sbin/run.sh
+#CMD ["run.sh"]

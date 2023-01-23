@@ -136,6 +136,7 @@ services:
       - "8888:8888"
     volumes:
       - ./jupyter/notebook:/tf/notebooks
+    command: "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --notebook-dir=/tf --NotebookApp.password='sha1:3d3c345a62f9:cf9dec8e8aafa354f9dd2c878b757c4dc40be596'"
     restart: always
     networks:
       sparknet:
